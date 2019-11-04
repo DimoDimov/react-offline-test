@@ -10,43 +10,43 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     target: 'web',
     entry: {
-        app: [
-            './index.js'
-        ],
+        app: ['./index.tsx']
     },
     output: {
         filename: '[name]-[hash:6].bundle.js',
         path: path.join(__dirname, './build/www'),
-        publicPath: `http://${host}:${port}/`,
+        publicPath: `http://${host}:${port}/`
     },
     resolve: {
+        modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+        alias: {
+            '@': path.resolve(__dirname, 'src')
+        },
         mainFields: ['browser', 'module', 'main'],
-        extensions: ['.js', '.json', '.jsx']
+        extensions: ['.js', '.json', '.jsx', '.tsx']
     },
     module: {
         rules: [
             {
-                test: /\.js(x?)$/,
+                test: /\.ts(x?)$/,
                 exclude: /node_modules/,
-                use: 'babel-loader',
+                use: 'ts-loader'
             },
             {
                 test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader'
-                ]
+                use: [MiniCssExtractPlugin.loader, 'css-loader']
             },
             {
                 test: /\.(png|jpg|gif)$/,
-                use: 'file-loader?name=img/[name]-[hash:6].[ext]',
-            },
-        ],
+                use: 'file-loader?name=images/[name]-[hash:6].[ext]'
+            }
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'index.html',
+            favicon: 'images/favicon.png'
         }),
         new MiniCssExtractPlugin({
             filename: '[name]-[hash:6].css',
@@ -57,6 +57,6 @@ module.exports = {
     devServer: {
         port,
         host,
-        contentBase: '/src',
-    },
+        contentBase: '/src'
+    }
 };

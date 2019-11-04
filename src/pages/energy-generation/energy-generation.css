@@ -1,0 +1,11 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-pointer > img {
+    max-width: 100%;
+}
+
+.donutchart {
+    max-width: 100%;
+}

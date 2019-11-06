@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Donutchart energyGenerationData={data.generationmix} /> should render and match snapshot 1`] = `
+"<div class=\\"row\\">
+  <div class=\\"col-md-2\\"></div>
+  <div class=\\"col-md-10 donut-chart-container\\"><svg class=\\"donutchart\\" width=\\"750\\" height=\\"500\\" viewBox=\\"0 0 750 500\\">
+      <g class=\\"donutchart-arcs\\">
+        <path class=\\"selected donutchart-arcs-path\\" d=\\"M482.5,250
+    A232.5, 232.5 0 0 1 151.00631471112058, 460.3722896983495
+    L196.7775885543659,363.1033815582524
+    A125, 125 0 0 0 375, 250 z\\" stroke=\\"#212121\\" fill=\\"#f44336\\" opacity=\\"0.5\\"></path>
+        <path class=\\"donutchart-arcs-path\\" d=\\"M154.19965939785862,453.5860868048544
+    A225, 225 0 0 1 249.99999999999997, 25
+    L249.99999999999997,125
+    A125, 125 0 0 0 196.7775885543659, 363.1033815582524 z\\" stroke=\\"#212121\\" fill=\\"#e91e63\\" opacity=\\"1\\"></path>
+        <path class=\\"donutchart-arcs-path\\" d=\\"M249.99999999999997,25
+    A225, 225 0 0 1 471.01463141395493, 207.83920421821193
+    L372.7859063410861,226.5773356767844
+    A125, 125 0 0 0 249.99999999999997, 125 z\\" stroke=\\"#212121\\" fill=\\"#9c27b0\\" opacity=\\"1\\"></path>
+        <path class=\\"donutchart-arcs-path\\" d=\\"M471.01463141395493,207.83920421821193
+    A225, 225 0 0 1 475, 249.99999999999994
+    L375,249.99999999999997
+    A125, 125 0 0 0 372.7859063410861, 226.5773356767844 z\\" stroke=\\"#212121\\" fill=\\"#673ab7\\" opacity=\\"1\\"></path>
+      </g>
+      <g class=\\"donutchart-innertext\\"><text class=\\"donutchart-innertext-label\\" x=\\"250\\" y=\\"45%\\" text-anchor=\\"middle\\">nuclear</text><text class=\\"donutchart-innertext-value\\" x=\\"250\\" y=\\"60%\\" text-anchor=\\"middle\\">32.00%</text></g>
+      <g class=\\"donutchart-legend\\">
+        <g transform=\\"translate(500,
+0)\\" class=\\"selected donutchart-legend-item\\">
+          <rect class=\\"selected donutchart-legend-item-rect\\" width=\\"25\\" height=\\"25\\" fill=\\"#f44336\\" opacity=\\"0.5\\" stroke=\\"#212121\\"></rect><text class=\\"selected donutchart-legend-item-label\\" x=\\"37.5\\" y=\\"12.5\\" dy=\\".35em\\">nuclear - 32</text>
+        </g>
+        <g transform=\\"translate(500,
+37.5)\\" class=\\"donutchart-legend-item\\">
+          <rect class=\\"donutchart-legend-item-rect\\" width=\\"25\\" height=\\"25\\" fill=\\"#e91e63\\" opacity=\\"1\\" stroke=\\"#212121\\"></rect><text class=\\"donutchart-legend-item-label\\" x=\\"37.5\\" y=\\"12.5\\" dy=\\".35em\\">gas - 43</text>
+        </g>
+        <g transform=\\"translate(500,
+75)\\" class=\\"donutchart-legend-item\\">
+          <rect class=\\"donutchart-legend-item-rect\\" width=\\"25\\" height=\\"25\\" fill=\\"#9c27b0\\" opacity=\\"1\\" stroke=\\"#212121\\"></rect><text class=\\"donutchart-legend-item-label\\" x=\\"37.5\\" y=\\"12.5\\" dy=\\".35em\\">wind - 22</text>
+        </g>
+        <g transform=\\"translate(500,
+112.5)\\" class=\\"donutchart-legend-item\\">
+          <rect class=\\"donutchart-legend-item-rect\\" width=\\"25\\" height=\\"25\\" fill=\\"#673ab7\\" opacity=\\"1\\" stroke=\\"#212121\\"></rect><text class=\\"donutchart-legend-item-label\\" x=\\"37.5\\" y=\\"12.5\\" dy=\\".35em\\">other - 3</text>
+        </g>
+      </g>
+    </svg></div>
+</div>"
+`;
+
+exports[`<Donutchart energyGenerationData={data.generationmix} /> should render nothing if there is no data 1`] = `"0"`;

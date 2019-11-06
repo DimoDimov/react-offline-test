@@ -27,7 +27,7 @@ describe('<EnergyGeneration />', () => {
     };
 
     let container = null;
-    beforeEach(() => {
+    beforeEach(async () => {
         // setup a DOM element as a render target
         container = document.createElement('div');
         document.body.appendChild(container);
@@ -37,6 +37,10 @@ describe('<EnergyGeneration />', () => {
         mockDateNow = jest
             .spyOn(global.Date, 'now')
             .mockImplementation(() => new Date(now).getTime());
+
+        await act(async () => {
+            render(<EnergyGeneration />, container);
+        });
     });
 
     afterEach(() => {
@@ -48,17 +52,11 @@ describe('<EnergyGeneration />', () => {
         mockDateNow.mockRestore();
     });
 
-    it('should render and match snapshot', async () => {
-        await act(async () => {
-            render(<EnergyGeneration />, container);
-        });
+    it('should render and match snapshot', () => {
         expect(pretty(container.innerHTML)).toMatchSnapshot();
     });
 
-    it('should updated The provided data date and time ', async () => {
-        await act(async () => {
-            render(<EnergyGeneration />, container);
-        });
+    it('should updated The provided data date and time ', () => {
         expect(
             container.querySelectorAll('.provided-data-update-date').length
         ).toBe(1);
@@ -69,11 +67,7 @@ describe('<EnergyGeneration />', () => {
         );
     });
 
-    it('should create four gauge elements - nuclear, gas, wind, other', async () => {
-        await act(async () => {
-            render(<EnergyGeneration />, container);
-        });
-
+    it('should create four gauge elements - nuclear, gas, wind, other', () => {
         const allChartItems = container.querySelectorAll(
             '.gauge-chart-item h2'
         );
@@ -86,10 +80,7 @@ describe('<EnergyGeneration />', () => {
         expect(allChartItems[3].textContent.trim()).toBe('other');
     });
 
-    it('should create donut chart and a legend with nuclear, gas, wind, other', async () => {
-        await act(async () => {
-            render(<EnergyGeneration />, container);
-        });
+    it('should create donut chart and a legend with nuclear, gas, wind, other', () => {
         expect(
             container.querySelectorAll('.donut-chart-container .donutchart')
                 .length
@@ -106,10 +97,7 @@ describe('<EnergyGeneration />', () => {
         expect(allDonutLegendItems[3].textContent.trim()).toBe('other - 3');
     });
 
-    it('should display a unicorn', async () => {
-        await act(async () => {
-            render(<EnergyGeneration />, container);
-        });
+    it('should display a unicorn', () => {
         expect(container.querySelectorAll('.unicorn-image').length).toBe(1);
     });
 
